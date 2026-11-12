@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>动态虚拟表格模拟站点</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="vg" id="vg">
+    <div class="vg-toolbar">
+      <span class="vg-tool-label">数据版本：</span>
+      <button type="button" class="vg-btn" data-version-btn="v1">版本 v1</button>
+      <button type="button" class="vg-btn" data-version-btn="v2">版本 v2</button>
+      <span class="vg-sep"></span>
+      <button type="button" class="vg-btn" id="vgRedrawBtn">强制重绘一次</button>
+      <button type="button" class="vg-btn" id="vgChaosBtn">开启重绘扰动</button>
+      <span class="vg-sep"></span>
+      <span class="vg-hint">横纵虚拟滚动 · DOM 节点复用 · 冻结编号列 · 两层表头</span>
+    </div>
+
+    <div class="vg-meta" id="vgMeta" aria-live="polite">
+      <span class="vg-meta-item">记录总数：<b data-meta="recordCount">-</b></span>
+      <span class="vg-meta-item">列数：<b data-meta="columnCount">-</b></span>
+      <span class="vg-meta-item">数据版本：<b data-meta="version">-</b></span>
+      <span class="vg-meta-item">加载状态：<b data-meta="loading">-</b></span>
+      <span class="vg-meta-item">视图序号：<b data-meta="viewSeq">-</b></span>
+    </div>
+
+    <div class="vg-grid">
+      <div class="vg-header">
+        <div class="vg-corner">编号</div>
+        <div class="vg-header-scroll" id="vgHeaderScroll">
+          <div class="vg-header-inner" id="vgHeaderInner">
+            <div class="vg-hgroup-row" id="vgHGroupRow"></div>
+            <div class="vg-hleaf-row" id="vgHLeafRow"></div>
+          </div>
+        </div>
+      </div>
+      <div class="vg-viewport" id="vgViewport">
+        <div class="vg-spacer" id="vgSpacer">
+          <div class="vg-body" id="vgBody"></div>
+          <div class="vg-loading" id="vgLoading" hidden>数据加载中……</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
