@@ -2,3 +2,5 @@ Windows native Python 3.12.8; no Docker.
 Prepared Python environment: D:\my-workspace\ai-workspace\zhongqiang\CC_Codex 用户反馈标注(领域专项)项目\选题\005_动态虚拟表格采集与证据追溯\准备记录\运行环境v2\Scripts\python.exe
 Use this interpreter for Playwright and pytest. SQLite is included in Python.
 No external task attachments. Implement the deliverables described in PROMPT.txt.
+Verified versions: Playwright 1.63.0, Chromium 153.0.8010.12, pytest 9.2.0.
+Exact installed Python packages: environment-requirements.txt.
